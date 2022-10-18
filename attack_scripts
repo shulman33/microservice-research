@@ -1,0 +1,12 @@
+
+# The GitHub repo is https://github.com/shekyan/slowhttptest
+
+# Slow Header attach 
+slowhttptest -c 500 -H -g -o ./output_file -i 10 -r 200 -t GET -u http://yourwebsite-or-server-ip.com -x 24 -p 2
+
+# Slow read attack 
+./slowhttptest -c 1000 -X -g -o slow_read_stats -r 200 -w 512 -y 1024 -n 5 -z 32 -k 3 -u https://myseceureserver/resources/index.html -p 3 
+
+# Slow Body attack 
+./slowhttptest -c 1000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u https://myseceureserver/resources/loginform.html -x 10 -p 3
+
